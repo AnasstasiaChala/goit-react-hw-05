@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import Navigation from '../../pages/Navigation/Navigation';
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
-const Navigation = lazy(() => import('../../pages/Navigation/Navigation'));
 const MoviesPage = lazy(() => import('../../pages/MoviesPage/MoviesPage'));
 const MovieDetailsPage = lazy(() =>
   import('../../pages/MovieDetailsPage/MovieDetailsPage')
@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/movie/:movieId" element={<MovieDetailsPage />}>
+          <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
             <Route path="credits" element={<MovieCast />} />
             <Route path="reviews" element={<MovieReviews />} />
           </Route>
